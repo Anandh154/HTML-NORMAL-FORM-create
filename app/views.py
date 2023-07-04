@@ -78,11 +78,4 @@ def retrive_web(request):
 def web_radio(request):
     LTO=Topic.objects.all()
     d={'LTO':LTO}
-    if request.method=='POST':            
-        RWST=request.POST.getlist('top')
-        wos=Webpage.objects.none()
-        for i in RWST:
-            wos=wos| Webpage.objects.filter(topic_name=i)
-        d1={'wos':wos}
-        return render(request,'display_retrie.html',d1)
     return render(request,'web_radio.html',d)

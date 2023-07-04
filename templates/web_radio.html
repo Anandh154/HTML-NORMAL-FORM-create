@@ -8,7 +8,7 @@
 <body>
     <center>
         <h1>inserting data by using dropdown method</h1>
-        <form action="" method="POST">
+        <form method="POST" action="{% url 'retrive_web' %}">
             {% csrf_token %}
             <!-- <label for="tn">topic_name</label>
 
@@ -24,14 +24,15 @@
             <label for="url">url</label>
             <input type="text" name="url" id="url"><br><br>
             <input type="submit" value="data insert"><br> -->
-            <label for="tn">topic_name</label>       
+            <label for="tn">topic_name</label><br><br>     
                 {% for to in LTO %}
                     <label for="top">{{to.topic_name}}</label>
                     <input type="checkbox" name="top" id="top" value="{{to}}">
+                    <br><br>
                 {% endfor %}
             <br><br>         
             
-            <input type="submit" value="data insert"><br>
+            <input type="submit" value="checkbox insert"><br>
         </form>
     </center>
 </body>
