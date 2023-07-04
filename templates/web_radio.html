@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>inserting data by using dropdown method</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <!-- <label for="tn">topic_name</label>
+
+            #<input type="text" name="tn" id="tn"><br>   
+        
+                {% for to in LTO %}
+                    <label for="top">{{to.topic_name}}</label>
+                    <input type="radio" name="top" id="top" value="{{to}}" >
+                {% endfor %}
+            <br><br>         
+            <label for="na">name</label>
+            <input type="text" name="na" id="na"><br><br>
+            <label for="url">url</label>
+            <input type="text" name="url" id="url"><br><br>
+            <input type="submit" value="data insert"><br> -->
+            <label for="tn">topic_name</label>       
+                {% for to in LTO %}
+                    <label for="top">{{to.topic_name}}</label>
+                    <input type="checkbox" name="top" id="top" value="{{to}}">
+                {% endfor %}
+            <br><br>         
+            
+            <input type="submit" value="data insert"><br>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="top">Topic_name</label>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <select name="top" id="top" multiple>
+                {% for wo in LTO %}
+                    <option value="{{wo}}">{{wo.topic_name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <input type="submit" value="Retrieve">
+        </form>
+    </center>
+</body>
+</html>
